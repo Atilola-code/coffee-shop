@@ -113,7 +113,7 @@ export default function CoffeeMenu() {
                 {filteredProducts.map((item) => (
                     <div key={item.id} className=' rounded-lg p-4 bg-white shadow'>
 
-                            <Image src={item.coffeeImage} alt={item.coffeeTitle} width={300} height={300} className='w-full h-48 object-cover rounded-md' />
+                            <Image src={item.coffeeImage} alt={item.coffeeTitle} width={300} height={300} className='w-full h-48 object-cover~ rounded-md' />
                         {imageOnly && (
                             <>
                         <h3 className='text-xl font-semibold mt-4'>{item.coffeeTitle}</h3>
