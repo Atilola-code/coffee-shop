@@ -42,7 +42,7 @@ export default function CoffeeMenu() {
   return (
     <div className='px-6'>
       <nav className='flex space-x-46 gap-8 text-lg font-medium mb-2 mt-24'>
-        <button className='pb-2 font-semibold md:ml-34 ml-8'>Products</button>
+        <button className='pb-2 font-semibold md:ml-32 ml-4'>Products</button>
         <button className='pb-2 text-gray-600 hover:text-black border-black'>Photos</button>
       </nav>
       <hr className='border-gray-300 mb-16'/>
