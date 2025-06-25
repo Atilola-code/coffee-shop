@@ -5,8 +5,8 @@ export default function HeroSection() {
   return (
     <div>
       <header>
-        <div className='w-full h-[285px] overflow-hidden'>
-            <Image src={"/Coffee-cherries.jpeg"} alt="Coffee Plant" width={200} height={200} className="object-cover w-full h-full " />
+        <div className='w-full md:h-[285px] h-[180px] overflow-hidden'>
+            <Image src={"/Coffee-cherries.jpeg"} alt="Coffee Plant" width={'1200'} height={'285'} className="object-cover w-full h-full " />
         </div>
       </header>
       <div className=' ml-16 flex flex-row gap-8 items-center justify-between'>

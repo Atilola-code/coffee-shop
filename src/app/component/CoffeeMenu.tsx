@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { coffeeMenu } from './data'
 import Image from 'next/image'
 import { IoIosArrowDown } from "react-icons/io";
+import { FaRegHeart } from "react-icons/fa6";
 import ToggleSwitch from './ToggleSwitch';
 
 interface CategoryFilter {
@@ -38,11 +39,6 @@ export default function CoffeeMenu() {
         return matchesCategory && matchesSearch && matchesDietary
     })
 
-    const sortProducts = [...filteredProducts].sort((a, b) => {
-        if (sortBy === 'PriceLowHigh') return a.price - b.price
-        if (sortBy === 'PriceHighLow') return b.price - a.price
-        return 0 
-    })
   return (
     <div className='px-6'>
       <nav className='flex space-x-46 gap-8 text-lg font-medium mb-2 mt-24'>
@@ -109,19 +105,23 @@ export default function CoffeeMenu() {
                 </select>
         </div>
         </div>
-        <main className='flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <main className='flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12'>
                 {filteredProducts.map((item) => (
-                    <div key={item.id} className=' rounded-lg p-4 bg-white shadow'>
-
-                            <Image src={item.coffeeImage} alt={item.coffeeTitle} width={300} height={300} className='w-full h-48 object-cover~ rounded-md' />
+                    <div key={item.id} className='relative rounded-lg bg-white shadow'>
+                        <div>
+                            <Image src={item.coffeeImage} alt={item.coffeeTitle} width={300} height={300} className='w-full h-54 object-cover rounded-t-md' />
+                            <button className='absolute top-2 right-2 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition-colors'>
+                            <FaRegHeart className='text-gray-700 text-xl'/>
+                            </button>
+                            </div>
                         {imageOnly && (
                             <>
-                        <h3 className='text-xl font-semibold mt-4'>{item.coffeeTitle}</h3>
+                        <h3 className='text-xl font-semibold mt-4 ml-4'>{item.coffeeTitle}</h3>
                         <div className='flex flex-row items-start gap-2 mt-2'>
-                        <Image src={item.bakeryImage} alt={item.bakeryName} width={20} height={20} className='w-8 h-8 object-cover rounded-full mb-2' />
-                        <p className='text-gray-600 mb-2'>{item.bakeryName}</p>
+                        <Image src={item.bakeryImage} alt={item.bakeryName} width={20} height={20} className='w-8 h-8 ml-4 object-cover rounded-full mt-2' />
+                        <p className='text-gray-600 mt-2'>{item.bakeryName}</p>
                         </div>
-                        <p className='text-lg font-medium'>${item.price.toFixed(2)}</p>
+                        <p className='text-lg font-medium p-4'>${item.price.toFixed(2)}</p>
                             </>
                         )}
                     </div>
