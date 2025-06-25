@@ -114,7 +114,7 @@ export default function CoffeeMenu() {
                             <FaRegHeart className='text-gray-700 text-xl'/>
                             </button>
                             </div>
-                        {imageOnly && (
+                        {!imageOnly && (
                             <>
                         <h3 className='text-xl font-semibold mt-4 ml-4'>{item.coffeeTitle}</h3>
                         <div className='flex flex-row items-start gap-2 mt-2'>
